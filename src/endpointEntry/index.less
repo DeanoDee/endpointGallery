@@ -1,0 +1,60 @@
+@import "../styles/main";
+
+.endpoint-entry {
+
+    @wrapperWidth: 22rem;
+    @toggleDimension: @font-size-600 * @line-height-size-600;
+
+    position: absolute;
+    top: @spacing-600;
+    left: -@wrapperWidth + @toggleDimension;
+    width: @wrapperWidth;
+    background-color: @blue-gray;
+	padding: @spacing-100;
+	transition: 0.5s;
+	box-shadow: 4px 4px 8px @neutral-500;
+
+    &.show {
+        left: 0;
+		box-shadow: 0 4px 8px @neutral-500;
+    }
+
+	.show-hide-toggle{
+
+		#typeography > .type-600();
+		width: @toggleDimension;
+		float: right;
+		color: @white;
+		text-align: center;
+
+		span {
+			margin: @spacing-300 0;
+		}
+
+	}
+
+	> form {
+		display: inline-block;
+
+		label {
+
+			#typeography > .type-300();
+			display: block;
+			margin: @spacing-100 0;
+			color: @white;
+
+		}
+
+		input {
+
+			#typeography > .type-400();
+			padding: @spacing-100;
+			margin-bottom: @spacing-100;
+			color: @neutral-700;
+			border-radius: @border-radius;
+			border: 1px solid @neutral-300;
+		}
+
+	}
+
+}
