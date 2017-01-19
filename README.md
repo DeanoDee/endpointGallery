@@ -49,4 +49,4 @@ As this was developed for a really specific instance, I could imagine working on
 
 ## Acknowlagement 
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and [Custom React Scripts](https://www.npmjs.com/package/custom-react-scripts).
