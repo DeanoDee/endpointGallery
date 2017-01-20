@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {EndpointEntry} from './endpointEntry/';
+import {Logo} from './logo/';
+import './App.less';
 
 class App extends Component {
 
@@ -16,7 +18,8 @@ class App extends Component {
 	render() {
 		let {changeEndpoint} = this;
 		return (
-			<div className="App">
+			<div className="app">
+				<Logo />
 				<EndpointEntry changeEndpoint={changeEndpoint}/>
 				<p className="App-intro">
 					To get started, edit

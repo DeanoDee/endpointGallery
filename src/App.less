@@ -1,1 +1,23 @@
-@import "styles/base";
+@import "./styles/main";
+
+html, body {
+	font-family: @overpass;
+	font-size: @font-size-base;
+	background-color: @blue-light;
+}
+
+.app {
+	.grid();
+	margin: 0 auto;
+	max-width: @main-column-xs;
+
+	@media only screen and (min-width: @main-column-sm) {
+		max-width: @main-column-xs;
+	}
+	@media only screen and (min-width: @main-column-md) {
+		max-width: @main-column-sm;
+	}
+	@media only screen and (min-width: @main-column-lg) {
+		max-width: @main-column-md;
+	}
+}
