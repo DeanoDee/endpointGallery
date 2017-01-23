@@ -27,7 +27,7 @@ Here's what it expects and endpoint to look like:
 ```
 {"name": [
 	{
-		"id": "N0tv3ryR3a0ab13Gu1d",
+		"_id": "N0tv3ryR3a0ab13Gu1d",
 		"title": "A title for the image",
 		"image": "http://somedomain.com/a/url/for/the/image.jpg",
 		"description": "A little something to tell the person what they are looking at"

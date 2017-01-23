@@ -1,4 +1,4 @@
-@import "./styles/main";
+@import "../styles/main";
 
 html, body {
 	font-family: @overpass;
@@ -7,7 +7,8 @@ html, body {
 }
 
 .app {
-	.grid();
+	#grid > .wrapper();
+
 	margin: 0 auto;
 	max-width: @main-column-xs;
 
@@ -19,5 +20,15 @@ html, body {
 	}
 	@media only screen and (min-width: @main-column-lg) {
 		max-width: @main-column-md;
+	}
+
+	.logo-wrapper {
+		#grid > .full();
+		margin-top: @spacing-200;
+		margin-bottom: @spacing-400;
+	}
+	.image-wrapper {
+		#grid > .typtic();
+		margin-bottom: @spacing-200;
 	}
 }

@@ -1,0 +1,40 @@
+{
+	"images": [
+		{
+			"_id": 0,
+			"title": "Dusty Sheppard",
+			"image": "http://arthurkade.com/wp-content/uploads/2012/04/14_Mark-Vierigs-Lex-regal-in-Afgh.jpg",
+			"description": "Protecting The Troops With “Soldier Dogs” With Maria Goodavage",
+			"tags": [
+				"wartime",
+				"working",
+				"dogs",
+				"desert"
+			]
+		},
+		{
+			"_id": 1,
+			"title": "Sighthound",
+			"image": "https://s-media-cache-ak0.pinimg.com/originals/a2/e2/28/a2e228f51a23745eaa5376b7c3984b32.jpg",
+			"description": "The Africanis is a landrace of South African dogs. It is believed to be of ancient origin, directly descended from hounds and pariah dogs of ancient Africa.",
+			"tags": [
+				"hound",
+				"africa",
+				"dogs"
+			]
+		},
+		{
+			"_id": 2,
+			"title": "Feral Dogs",
+			"image": "http://img.gagdaily.com/uploads/posts/edu/2013/0000d968_big.jpg",
+			"description": "The Africanis Society of Southern Africa aims to conserve the Africanis as a landrace rather than develop it as a breed. The Africanis is recognized by the Kennel Union of South Africa (KUSA) as an emerging breed.",
+			"tags": [
+				"feral",
+				"africa",
+				"dogs",
+				"landscape",
+				"regal"
+			]
+		}
+	]
+}

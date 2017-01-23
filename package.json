@@ -6,9 +6,12 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
+    "flexboxgrid": "^6.3.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-fontawesome": "^1.5.0"
+    "react-ellipsis-text": "^1.0.0",
+    "react-fontawesome": "^1.5.0",
+    "whatwg-fetch": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -3,27 +3,23 @@
 .logo {
 
 	.lines(){
-		@xs-border: 0.125em;
 
-		content:'';
-		position: absolute;
-		top: @spacing-200 - @xs-border;
-		width: @spacing-300;
-		border-top: @xs-border solid @rose;
-		border-bottom: @xs-border solid @rose;
-		height: @spacing-100;
 		@media only screen and (min-width: @main-column-sm) {
+			content:'';
+			position: absolute;
 			top: @spacing-300;
-			border-top-width: @spacing-50;
-			border-bottom-width: @spacing-50;
+			width: @spacing-300;
+			border-top: @spacing-50 solid @rose;
+			border-bottom: @spacing-50 solid @rose;
+			height: @spacing-100;
 		}
 	}
 
 	position: relative;
 	text-align: center;
 	> h1 {
-		.col-xs-12();
-		#typeography > .type-500();
+
+		#typeography > .type-600();
 		text-transform: uppercase;
 		font-weight: @font-weight-black;
 		color: @rose;

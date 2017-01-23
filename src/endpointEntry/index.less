@@ -5,18 +5,19 @@
     @wrapperWidth: 22rem;
     @toggleDimension: @font-size-600 * @line-height-size-600;
 
-    position: absolute;
-    top: @spacing-600;
+    position: fixed;
+    top: @spacing-800;
     left: -@wrapperWidth + @toggleDimension;
     width: @wrapperWidth;
     background-color: @blue-gray;
 	padding: @spacing-100;
 	transition: 0.5s;
-	box-shadow: 4px 4px 8px @neutral-500;
+	box-shadow: @spacing-50 @spacing-50 @spacing-100 @neutral-500;
+	z-index: @z-index-500;
 
     &.show {
         left: 0;
-		box-shadow: 0 4px 8px @neutral-500;
+		box-shadow: 0 @spacing-50 @spacing-100 @neutral-500;
     }
 
 	.show-hide-toggle{

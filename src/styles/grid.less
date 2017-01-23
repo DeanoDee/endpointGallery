@@ -1,0 +1,17 @@
+@import (less) "../../node_modules/flexboxgrid/dist/flexboxgrid.css";
+
+#grid {
+	.wrapper(){
+		&:extend(.row all);
+	}
+
+	.full() {
+		&:extend(.col-xs-12 all);
+	}
+
+	.typtic(){
+		&:extend(.col-xs-12 all);
+		&:extend(.col-md-6 all);
+		&:extend(.col-lg-4 all);
+	}
+}
