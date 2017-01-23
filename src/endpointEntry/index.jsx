@@ -38,14 +38,18 @@ export class EndpointEntry extends Component {
 		let {show, endpoint} = state;
 		let onSubmit = getOnSubmit(changeEndpoint);
 		return (
-			<div className={show ? 'endpoint-entry show' : 'endpoint-entry'}>
-				<div className="show-hide-toggle" onClick={toggleShow}>
-					<FontAwesome name="code"></FontAwesome>
+			<div>
+				{show ? <div className="endpoint-entry-overlay" onClick={toggleShow}></div> : null}
+				<div className={show ? 'endpoint-entry show' : 'endpoint-entry'}>
+
+					<div className="show-hide-toggle" onClick={toggleShow}>
+						<FontAwesome name="code" />
+					</div>
+					<form onSubmit={onSubmit}>
+						<label>Enter endpoint</label>
+						<input type="text" name="endpoint" value={endpoint} onChange={onChange} />
+					</form>
 				</div>
-				<form onSubmit={onSubmit}>
-					<label>Enter endpoint</label>
-					<input type="text" name="endpoint" value={endpoint} onChange={onChange} />
-				</form>
 			</div>
 		);
 	}

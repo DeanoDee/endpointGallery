@@ -4,7 +4,7 @@ import './index.less';
 
 export const ImageCard = ({imageObject}) => {
 
-	let maxTextLength = 80;
+	let maxTextLength = 78;
 
 	let getTagElement = (tag) => {
 		return (

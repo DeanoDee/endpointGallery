@@ -1,37 +1,50 @@
 import React, {Component} from 'react';
 import {EndpointEntry} from '../endpointEntry';
 import {Logo} from '../logo';
+import FontAwesome from 'react-fontawesome';
 import {ImageCard} from '../imageCard';
 import 'whatwg-fetch';
 import './index.less';
 
 class App extends Component {
 
+	constructor() {
+		super();
+		let {host} = window.location;
+		let endpoint = `http://${host}/defaultImages.json`;
+		this.state = {endpoint, loading: true, data: null, error: null};
+	}
+
 	componentWillMount() {
-		let endpoint = '';
-		this.setState({endpoint});
 		this.getData();
 	}
 
 	changeEndpoint = (endpoint) => {
-		console.log('endpoint changed', endpoint);
-		this.setState({endpoint});
+		let data = null;
+		let loading = true;
+		let error = false;
+		this.setState({endpoint, data, error, loading}, this.getData);
 	}
 
 	setData = (object) => {
+		let loading = false;
 		let first = Object.keys(object)[0];
 		let data = object[first];
-		this.setState({data});
+		this.setState({data, loading});
 	}
 
-	getData = (endpoint) => {
-		if(!endpoint){
-			let {host} = window.location;
-			endpoint = `http://${host}/defaultImages.json`;
-		}
+	getData = () => {
+		let {endpoint} = this.state;
 		fetch(endpoint)
 			.then((response) => response.json())
-			.then(this.setData);
+			.then(this.setData)
+			.catch(this.setError);
+	}
+
+	setError = (error) => {
+		error = error.toString();
+		let loading = false;
+		this.setState({loading, error});
 	}
 
 	getCards = (imageObject) => {
@@ -44,8 +57,16 @@ class App extends Component {
 	}
 
 	getNoData = () => {
+		let {loading, error, endpoint} = this.state;
+		if(loading){
+			return (
+				<div className="spinner-wrapper">
+					<FontAwesome name="refresh" className="fa-spin" />
+				</div>
+			);
+		}
 		return (
-			<div>This is a todo</div>
+			<div className="error-wrapper"><h2>Something went wrong</h2><p>The machine said, <strong>"{error}"</strong>. I guess it didn't like <strong><em>{endpoint}</em></strong> as a place to get images.</p></div>
 		);
 	}
 
@@ -58,7 +79,7 @@ class App extends Component {
 					<Logo />
 				</div>
 				<EndpointEntry changeEndpoint={changeEndpoint}/>
-				{data ? data.map(getCards) : getNoData}
+				{data ? data.map(getCards) : getNoData()}
 			</div>
 		);
 	}
