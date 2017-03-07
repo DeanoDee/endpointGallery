@@ -3,7 +3,6 @@ import {EndpointEntry} from '../endpointEntry';
 import {Logo} from '../logo';
 import FontAwesome from 'react-fontawesome';
 import {ImageCard} from '../imageCard';
-import 'whatwg-fetch';
 import './index.less';
 import {poll} from '../lib/polling.js';
 
