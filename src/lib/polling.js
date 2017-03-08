@@ -17,7 +17,6 @@ let errorOn = (maxAttempts) => {
 
 let retryStrategy = ({maxAttempts, delay}) => {
 	return (errors) => {
-		console.log("error");
 		let errorOnMaxAttempts = errorOn(maxAttempts);
 		return errors.scan(errorOnMaxAttempts, 0).delay(delay);
 	};
@@ -32,7 +31,6 @@ let load = (url) => {
 				observer.error(xhr.status);
 			}
 			try {
-				console.log("hit");
 				let data = JSON.parse(xhr.responseText);
 				observer.next(data);
 				observer.complete();
