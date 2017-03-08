@@ -3,6 +3,7 @@ import 'rxjs/add/operator/repeatWhen';
 import 'rxjs/add/operator/retryWhen';
 import 'rxjs/add/operator/scan';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/single';
 
 let retryStrategy = ({attempts, delay}) => {
 	return (errors) => {
@@ -43,7 +44,7 @@ let load = (url) => {
 			xhr.abort();
 		};
 
-	}).retryWhen(retryStrategy({attempts: 3, delay: 1000}));
+	}).retryWhen(retryStrategy({attempts: 3, delay: 1000})).single();
 };
 
 let poll = (url, pollingDelay = 10000) => {
