@@ -5,15 +5,21 @@ import 'rxjs/add/operator/scan';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/single';
 
-let retryStrategy = ({attempts, delay}) => {
+let errorOn = (maxAttempts) => {
+	return (accumulator, value) => {
+		accumulator += 1;
+		if (accumulator < maxAttempts) {
+			return accumulator;
+		}
+		throw new Error(value);
+	};
+};
+
+let retryStrategy = ({maxAttempts, delay}) => {
 	return (errors) => {
-		return errors.scan((accumulator, value) => {
-			accumulator += 1;
-			if (accumulator < attempts) {
-				return accumulator;
-			}
-			throw new Error(value);
-		}, 0).delay(delay);
+		console.log("error");
+		let errorOnMaxAttempts = errorOn(maxAttempts);
+		return errors.scan(errorOnMaxAttempts, 0).delay(delay);
 	};
 };
 
@@ -26,6 +32,7 @@ let load = (url) => {
 				observer.error(xhr.status);
 			}
 			try {
+				console.log("hit");
 				let data = JSON.parse(xhr.responseText);
 				observer.next(data);
 				observer.complete();
@@ -44,7 +51,7 @@ let load = (url) => {
 			xhr.abort();
 		};
 
-	}).retryWhen(retryStrategy({attempts: 3, delay: 1000})).single();
+	}).retryWhen(retryStrategy({maxAttempts: 3, delay: 1000})).single();
 };
 
 let poll = (url, pollingDelay = 10000) => {
