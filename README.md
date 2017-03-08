@@ -1,6 +1,6 @@
 # Endpoint Gallery
 
-A web app that accepts an endpoint and presents the results as a gallery of images
+A web app that accepts an endpoint and presents the results as a gallery of images and polls for changes incrementally.
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ npm start
 
 ### Interact with it
 
-Click the code icon and enter a new endpoint in the search box that appears and … magic
+Click the code icon and enter a new endpoint in the search box that appears and … magic. Try http://localhost:3002/alternateImages.json.
 
 ## Development
 
@@ -71,7 +71,7 @@ This project is licensed under the MIT License
 
 ## Future
 
-As this was developed for a really specific instance, I could imagine working on a way to add mapping from foreign feeds to the expected scheme, subscribe to data instead of just ajax, and RxJS-ing it…maybe.
+As this was developed for a really specific instance, I could imagine working on a way to add mapping from foreign feeds to the expected scheme, subscribe to data instead of just polling.
 
 ## Acknowlagement 
 

@@ -3,8 +3,9 @@ import {EndpointEntry} from '../endpointEntry';
 import {Logo} from '../logo';
 import FontAwesome from 'react-fontawesome';
 import {ImageCard} from '../imageCard';
-import 'whatwg-fetch';
 import './index.less';
+import {poll} from '../lib/polling.js';
+
 
 class App extends Component {
 
@@ -16,14 +17,19 @@ class App extends Component {
 	}
 
 	componentWillMount() {
-		this.getData();
+		let {getData} = this;
+		getData();
 	}
 
 	changeEndpoint = (endpoint) => {
 		let data = null;
 		let loading = true;
 		let error = false;
-		this.setState({endpoint, data, error, loading}, this.getData);
+		let {subscription} = this.state;
+		if(subscription){
+			subscription.unsubscribe();
+		}
+		this.setState({endpoint, data, error, loading, subscription: null}, this.getData);
 	}
 
 	setData = (object) => {
@@ -34,11 +40,10 @@ class App extends Component {
 	}
 
 	getData = () => {
-		let {endpoint} = this.state;
-		fetch(endpoint)
-			.then((response) => response.json())
-			.then(this.setData)
-			.catch(this.setError);
+		let {setData, setError, state} = this;
+		let {endpoint} = state;
+		let subscription = poll(endpoint).subscribe(setData, setError);
+		this.setState({subscription});
 	}
 
 	setError = (error) => {
