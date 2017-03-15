@@ -41,7 +41,7 @@ describe('App', () => {
 		expect(data).toBe(mockData.name);
 		expect(loading).toBe(false);
 	});
-	it('setError set and error and loading to true', () => {
+	it('setError set the error to the passed message and loading to false', () => {
 		const mockError = "SomeError";
 		app.setError(mockError);
 		const {error, loading} = app.state;
