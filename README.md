@@ -73,7 +73,7 @@ This project is licensed under the MIT License
 
 As this was developed for a really specific instance, I could imagine working on a way to add mapping from foreign feeds to the expected scheme, subscribe to data instead of just polling.
 
-## Acknowlagement 
+## Acknowledgement 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and [Custom React Scripts](https://www.npmjs.com/package/custom-react-scripts). A couple of helpers packages were used to wire this up including:  
 * [flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid) for the grid
