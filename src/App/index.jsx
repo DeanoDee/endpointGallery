@@ -24,7 +24,7 @@ class App extends Component {
 	changeEndpoint = (endpoint) => {
 		let data = null;
 		let loading = true;
-		let error = false;
+		let error = null;
 		let {subscription} = this.state;
 		if(subscription){
 			subscription.unsubscribe();
