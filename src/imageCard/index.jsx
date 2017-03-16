@@ -30,7 +30,7 @@ export const ImageCard = ({imageObject}) => {
 		<div className="image-card">
 			<h2>{title}</h2>
 			<div className="image-frame">
-				<img src={image} role="presentation"/>
+				<img src={image} alt={title}/>
 			</div>
 			<EllipsisText text={description} length={maxTextLength} />
 			{getTags(tags)}
