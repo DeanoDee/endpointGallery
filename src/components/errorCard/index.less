@@ -1,0 +1,19 @@
+@import "../../styles/main";
+
+.error-card {
+	#grid > .centeredTextCard();
+	margin-top: @spacing-400;
+	background: @white;
+	border-radius: @border-radius;
+	box-shadow: @spacing-50 @spacing-50 0 @blue-green;
+	padding: @spacing-100 @spacing-200;
+	> h2 {
+		#typeography > .type-500;
+		color: @neutral-700;
+		text-align: center;
+	}
+	> p {
+		#typeography > .type-300;
+		color: @neutral-600;
+	}
+}

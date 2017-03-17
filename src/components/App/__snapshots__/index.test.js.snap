@@ -1,0 +1,9 @@
+exports[`App renders correctly 1`] = `
+<div
+  className="app">
+  <Logo />
+  <EndpointEntry
+    changeEndpoint={[Function]} />
+  <Spinner />
+</div>
+`;

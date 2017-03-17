@@ -4,15 +4,15 @@ import './index.less';
 
 export const ImageCard = ({imageObject}) => {
 
-	let maxTextLength = 78;
+	const maxTextLength = 78;
 
-	let getTagElement = (tag) => {
+	const getTagElement = (tag) => {
 		return (
 			<li key={tag}>{tag}</li>
 		);
 	};
 
-	let getTags = (tags) => {
+	const getTags = (tags) => {
 		if(!tags) {
 			return null;
 		}
@@ -24,16 +24,18 @@ export const ImageCard = ({imageObject}) => {
 		);
 	};
 
-	let {title, image, description, tags} = imageObject;
+	const {title, image, description, tags} = imageObject;
 
 	return (
 		<div className="image-card">
-			<h2>{title}</h2>
-			<div className="image-frame">
-				<img src={image} alt={title}/>
+			<div className="wrapper">
+				<h2>{title}</h2>
+				<div className="image-frame">
+					<img src={image} alt={title}/>
+				</div>
+				<EllipsisText text={description} length={maxTextLength} />
+				{getTags(tags)}
 			</div>
-			<EllipsisText text={description} length={maxTextLength} />
-			{getTags(tags)}
 		</div>
 
 	);

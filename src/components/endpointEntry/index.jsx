@@ -5,38 +5,38 @@ import './index.less';
 export class EndpointEntry extends Component {
 
 	componentWillMount(){
-		let show = false;
-		let endpoint = '';
+		const show = false;
+		const endpoint = '';
 		this.setState({show, endpoint});
 	}
 
 	toggleShow = () => {
-		let {show} = Object.assign(this.state);
-		show = !show;
+		const {show:currentShow} = this.state;
+		const show = !currentShow;
 		this.setState({show});
 	}
 
 	onChange = (event) => {
-		let {value: endpoint} = event.target;
+		const {value: endpoint} = event.target;
 		this.setState({endpoint});
 	}
 
 	getOnSubmit = (changeEndpoint) => {
 		return (event) => {
 			event.preventDefault();
-			let {endpoint} = this.state;
-			changeEndpoint(endpoint);
-			endpoint = '';
-			let show = false;
+			const {endpoint:submitedEndpoint} = this.state;
+			changeEndpoint(submitedEndpoint);
+			const endpoint = '';
+			const show = false;
 			this.setState({endpoint, show});
 		};
 	}
 
 	render() {
-		let {toggleShow, state, props, getOnSubmit, onChange} = this;
-		let {changeEndpoint} = props;
-		let {show, endpoint} = state;
-		let onSubmit = getOnSubmit(changeEndpoint);
+		const {toggleShow, state, props, getOnSubmit, onChange} = this;
+		const {changeEndpoint} = props;
+		const {show, endpoint} = state;
+		const onSubmit = getOnSubmit(changeEndpoint);
 		return (
 			<div>
 				{show ? <div className="endpoint-entry-overlay" onClick={toggleShow}></div> : null}
