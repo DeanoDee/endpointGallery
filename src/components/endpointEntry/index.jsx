@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import FontAwesome from 'react-fontawesome';
 import './index.less';
 
@@ -54,3 +54,7 @@ export class EndpointEntry extends Component {
 		);
 	}
 }
+
+EndpointEntry.propTypes = {
+	changeEndpoint: PropTypes.func.isRequired
+};

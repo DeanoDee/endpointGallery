@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import EllipsisText  from 'react-ellipsis-text';
 import './index.less';
 
@@ -40,4 +40,8 @@ export const ImageCard = ({imageObject}) => {
 
 	);
 
+};
+
+ImageCard.propTypes = {
+	imageObject: PropTypes.object.isRequired
 };
