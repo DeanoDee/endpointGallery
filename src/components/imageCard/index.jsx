@@ -4,7 +4,7 @@ import './index.less';
 
 export const ImageCard = ({imageObject}) => {
 
-	const maxTextLength = 78;
+	const maxCharacterLength= 78;
 
 	const getTagElement = (tag) => {
 		return (
@@ -33,7 +33,7 @@ export const ImageCard = ({imageObject}) => {
 				<div className="image-frame">
 					<img src={image} alt={title}/>
 				</div>
-				<EllipsisText text={description} length={maxTextLength} />
+				<EllipsisText text={description} length={maxCharacterLength} />
 				{getTags(tags)}
 			</div>
 		</div>
