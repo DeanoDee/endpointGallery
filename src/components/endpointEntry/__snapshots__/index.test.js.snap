@@ -1,0 +1,24 @@
+exports[`endpointEntry renders correctly 1`] = `
+<div>
+  <div
+    className="endpoint-entry">
+    <div
+      className="show-hide-toggle"
+      onClick={[Function]}>
+      <FontAwesome
+        name="code" />
+    </div>
+    <form
+      onSubmit={[Function]}>
+      <label>
+        Enter endpoint
+      </label>
+      <input
+        name="endpoint"
+        onChange={[Function]}
+        type="text"
+        value="" />
+    </form>
+  </div>
+</div>
+`;

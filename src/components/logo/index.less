@@ -1,4 +1,4 @@
-@import "../styles/main";
+@import "../../styles/main";
 
 .logo {
 
@@ -15,8 +15,12 @@
 		}
 	}
 
+	#grid > .full();
+	margin-top: @spacing-200;
+	margin-bottom: @spacing-400;
 	position: relative;
 	text-align: center;
+
 	> h1 {
 
 		#typeography > .type-600();
@@ -38,12 +42,5 @@
 		@media only screen and (min-width: @main-column-sm) {
 			#typeography > .type-700();
 		}
-		// &::after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	top: 0;
-		// 	bottom: 0;
-		// 	height: @line-height-size-700;
-		// }
 	}
 }

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/scan';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/single';
 
-let errorOn = (maxAttempts) => {
+const errorOn = (maxAttempts) => {
 	return (accumulator, value) => {
 		accumulator += 1;
 		if (accumulator < maxAttempts) {
@@ -15,18 +15,18 @@ let errorOn = (maxAttempts) => {
 	};
 };
 
-let retryStrategy = ({maxAttempts, delay}) => {
+const retryStrategy = ({maxAttempts, delay}) => {
 	return (errors) => {
-		let errorOnMaxAttempts = errorOn(maxAttempts);
+		const errorOnMaxAttempts = errorOn(maxAttempts);
 		return errors.scan(errorOnMaxAttempts, 0).delay(delay);
 	};
 };
 
-let load = (url) => {
+const load = (url) => {
 	return Observable.create(observer => {
 		let xhr = new XMLHttpRequest();
 
-		let onLoad = () => {
+		const onLoad = () => {
 			if (xhr.status !== 200) {
 				observer.error(xhr.status);
 			}
@@ -52,7 +52,7 @@ let load = (url) => {
 	}).retryWhen(retryStrategy({maxAttempts: 3, delay: 1000})).single();
 };
 
-let poll = (url, pollingDelay = 10000) => {
+const poll = (url, pollingDelay = 10000) => {
 	return load(url).repeatWhen(completed => completed.delay(pollingDelay));
 };
 
