@@ -13,7 +13,7 @@ Make sure you have [npm](https://docs.npmjs.com/getting-started/installing-node)
 ### Install it
 
 ```
-git clone git@github.com:DeanoDee/endpointGallery.git
+git clone https://github.com/DeanoDee/endpointGallery.git
 cd endpointGallery
 npm install
 ```
@@ -21,6 +21,11 @@ npm install
 
 ```
 npm start
+```
+### Test it
+
+```
+npm test
 ```
 
 ### Interact with it
