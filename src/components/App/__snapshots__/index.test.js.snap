@@ -1,9 +1,9 @@
 exports[`App renders correctly 1`] = `
 <div
   className="app">
-  <Logo />
+  <Unknown />
   <EndpointEntry
     changeEndpoint={[Function]} />
-  <Spinner />
+  <Unknown />
 </div>
 `;

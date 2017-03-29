@@ -5,7 +5,7 @@ import TestUtils from 'react-addons-test-utils';
 
 describe('endpointEntry', () => {
 	const changeEndpoint = jest.fn();
-	const endpointEntry = TestUtils.renderIntoDocument(<EndpointEntry />);
+	const endpointEntry = TestUtils.renderIntoDocument(<EndpointEntry changeEndpoint={changeEndpoint}/>);
 	const showHideToggle = TestUtils.findRenderedDOMComponentWithClass(endpointEntry, 'show-hide-toggle');
 	const onSubmit = endpointEntry.getOnSubmit(changeEndpoint);
 	const mockEvent = {
@@ -16,7 +16,7 @@ describe('endpointEntry', () => {
 	};
 	it('renders correctly', () => {
 		const renderer = TestUtils.createRenderer();
-		renderer.render(<EndpointEntry />);
+		renderer.render(<EndpointEntry changeEndpoint={changeEndpoint}/>);
 		const tree = renderer.getRenderOutput();
 		expect(tree).toMatchSnapshot();
 	});
