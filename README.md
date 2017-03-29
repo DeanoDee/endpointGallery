@@ -14,6 +14,7 @@ Make sure you have [npm](https://docs.npmjs.com/getting-started/installing-node)
 
 ```
 git clone git@github.com:DeanoDee/endpointGallery.git
+cd endpointGallery
 npm install
 ```
 ### Run it
