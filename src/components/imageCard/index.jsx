@@ -2,29 +2,9 @@ import React, {PropTypes} from 'react';
 import EllipsisText  from 'react-ellipsis-text';
 import './index.less';
 
-export const ImageCard = ({imageObject}) => {
+export const ImageCard = ({title, image, description, tags}) => {
 
 	const maxCharacterLength= 78;
-
-	const getTagElement = (tag) => {
-		return (
-			<li key={tag}>{tag}</li>
-		);
-	};
-
-	const getTags = (tags) => {
-		if(!tags) {
-			return null;
-		}
-		return (
-			<div className="tag-wrapper">
-				<h3>Tags:</h3>
-				<ul>{tags.map(getTagElement)}</ul>
-			</div>
-		);
-	};
-
-	const {title, image, description, tags} = imageObject;
 
 	return (
 		<div className="image-card">
@@ -34,7 +14,12 @@ export const ImageCard = ({imageObject}) => {
 					<img src={image} alt={title}/>
 				</div>
 				<EllipsisText text={description} length={maxCharacterLength} />
-				{getTags(tags)}
+				{tags &&
+					<div className="tag-wrapper">
+						<h3>Tags:</h3>
+						<ul>{tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+					</div>
+				}
 			</div>
 		</div>
 

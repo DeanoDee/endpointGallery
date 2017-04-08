@@ -4,10 +4,11 @@ import './index.less';
 
 export class EndpointEntry extends Component {
 
-	componentWillMount(){
+	constructor() {
+		super();
 		const show = false;
 		const endpoint = '';
-		this.setState({show, endpoint});
+		this.state = {show, endpoint};
 	}
 
 	toggleShow = () => {

@@ -55,7 +55,7 @@ class App extends Component {
 	getCards = (imageObject) => {
 		const {_id} = imageObject;
 		return (
-			<ImageCard key={_id} imageObject={imageObject}/>
+			<ImageCard key={_id} {...imageObject}/>
 		);
 	}
 
